@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-wpth_ucu8_v^y(0pwwz!i%06sr92)0g7jv!$&8sc6-630ur!%0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]   #테스트용으로 나중에는 서버 주소로 변경
 
 # Application definition
 
