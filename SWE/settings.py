@@ -132,5 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 connect(
     db='teamprojectdb',
-    host='mongodb+srv://kjyvdd:zOq3BqzLxHuJzEWQ@cluster0.tzpkxgg.mongodb.net/myprojectdb?retryWrites=true&w=majority'
+    host='mongodb+srv://kjyvdd:zOq3BqzLxHuJzEWQ@cluster0.tzpkxgg.mongodb.net/teamprojectdb?retryWrites=true&w=majority'
 )
