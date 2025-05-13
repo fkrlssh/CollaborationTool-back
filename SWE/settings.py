@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+from mongoengine import connect
 
 load_dotenv()
 
@@ -128,3 +129,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+connect(
+    db='teamprojectdb',
+    host='mongodb+srv://kjyvdd:zOq3BqzLxHuJzEWQ@cluster0.tzpkxgg.mongodb.net/myprojectdb?retryWrites=true&w=majority'
+)
