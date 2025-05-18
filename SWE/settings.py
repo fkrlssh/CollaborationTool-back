@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 import os
 from mongoengine import connect
 
+
 load_dotenv()
 
 
@@ -130,7 +131,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-connect(
-    db='teamprojectdb',
-    host='mongodb+srv://kjyvdd:zOq3BqzLxHuJzEWQ@cluster0.tzpkxgg.mongodb.net/teamprojectdb?retryWrites=true&w=majority'
-)
+# connect(
+#     db='teamprojectdb',
+#     host='mongodb+srv://kjyvdd:zOq3BqzLxHuJzEWQ@cluster0.tzpkxgg.mongodb.net/teamprojectdb?retryWrites=true&w=majority'
+    
+# )
+ 
+load_dotenv()
+connect(host=os.getenv("MONGO_URL"))
