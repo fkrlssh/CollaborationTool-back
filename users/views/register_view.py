@@ -13,7 +13,10 @@ class RegisterView(APIView):
         name = data.get("name")
 
         if not email or not password or not name:
-            return Response({"error": "모든 항목을 입력하세요."}, status=400)
+            return Response({
+                "success": False,
+                "error": "모든 항목을 입력해주세요."
+            }, status=status.HTTP_400_BAD_REQUEST)
 
         hashed_pw = hash_password(password)
 
@@ -21,13 +24,19 @@ class RegisterView(APIView):
             user = User(
                 email=email,
                 password=hashed_pw,
-                name=name,
-                role="user"
+                name=name
             ).save()
         except NotUniqueError:
-            return Response({"error": "이미 존재하는 이메일입니다."}, status=409)
+            return Response({
+                "success": False,
+                "error": "이미 등록된 이메일입니다."
+            }, status=status.HTTP_409_CONFLICT)
 
         return Response({
-            "message": "회원가입 성공",
-            "user_id": str(user.id)
+            "success": True,
+            "user": {
+                "email": user.email,
+                "name": user.name,
+                "createdAt": user.createdAt
+            }
         }, status=status.HTTP_201_CREATED)
