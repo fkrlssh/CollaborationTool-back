@@ -13,6 +13,7 @@ def jwt_required(view_func):
 
         token = auth_header.split(" ")[1]
         payload = decode_jwt(token)
+        user = User.objects(id=payload.get("user_id")).first()
         if not payload:
             return Response({"error": "유효하지 않거나 만료된 토큰입니다."}, status=status.HTTP_401_UNAUTHORIZED)
 
