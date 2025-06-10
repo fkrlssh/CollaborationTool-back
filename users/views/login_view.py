@@ -4,6 +4,7 @@ from rest_framework import status
 from users.models.user import User
 from utils.hash import check_password
 from utils.jwt_token import generate_jwt
+from django.utils import timezone
 from datetime import datetime
 
 class LoginView(APIView):

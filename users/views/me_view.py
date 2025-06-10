@@ -10,6 +10,6 @@ class MeView(APIView):
             "id": user.email,
             "email": user.email,
             "name": user.name,
-            "role": user,
-            "lastLogin": user.last_Login
+            # "role": user.role, 
+            "lastLogin": user.last_login
         })
