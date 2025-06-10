@@ -14,11 +14,15 @@ class LoginView(APIView):
         if not email or not password:
             return Response({"error": "이메일과 비밀번호를 입력하세요."}, status=400)
 
-        user = User.objects.filter(email=email).first()
+        try:
+            user = User.objects.filter(email=email).first()
+        except Exception as e:
+            return Response({"error": f"DB 오류: {str(e)}"}, status=500)
+
         if not user or not check_password(password, user.password):
             return Response({"error": "이메일 또는 비밀번호가 잘못되었습니다."}, status=401)
 
-        user.lastLogin = datetime.now()
+        user.last_login = timezone.now()
         user.save()
 
         token = generate_jwt({
