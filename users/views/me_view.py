@@ -7,9 +7,9 @@ class MeView(APIView):
     def get(self, request):
         user = request.user
         return Response({
-            "id": str(user.id),
+            "id": user.email,
             "email": user.email,
             "name": user.name,
-            "role": user.role,
-            "lastLogin": user.lastLogin
+            "role": user,
+            "lastLogin": user.last_Login
         })

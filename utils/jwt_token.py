@@ -21,3 +21,11 @@ def decode_jwt(token: str) -> dict:
         return None
     except jwt.InvalidTokenError:
         return None
+
+def encode_jwt(user):
+    payload = {
+        "user_id": str(user.email),   # ← 기존: user.id
+        "exp": datetime.utcnow() + timedelta(days=1),
+    }
+    token = jwt.encode(payload, os.getenv("JWT_SECRET_KEY"), algorithm="HS256")
+    return token
