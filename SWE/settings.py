@@ -27,6 +27,25 @@ ALLOWED_HOSTS = ["*"]   #테스트용으로 나중에는 서버 주소로 변경
 
 # Application definition
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'signup-otp',
+        'TIMEOUT': 300,  # 5분
+    }
+}
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST      = 'smtp.gmail.com'
+EMAIL_PORT      = 587
+EMAIL_USE_TLS   = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')       # .env 에 등록
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+
+
 INSTALLED_APPS = [
     'corsheaders',
     'django.contrib.admin',
@@ -41,6 +60,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
 ]
+
+
+
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
