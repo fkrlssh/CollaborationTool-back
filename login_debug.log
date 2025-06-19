@@ -1,0 +1,135 @@
+2025-06-19 23:23:38,960 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:23:58,006 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:01,690 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:11,275 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:15,377 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:15,550 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:31,732 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:32,500 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:33,197 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:33,534 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:24:33,710 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:28:33,051 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:29:40,072 [WARNING] Not Found: /api/tasks/todo/2
+2025-06-19 23:29:40,074 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-19 23:29:40,077 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:29:40,623 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-19 23:29:50,080 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:29:50,093 [WARNING] Not Found: /api/tasks/todo/3
+2025-06-19 23:29:50,507 [WARNING] Not Found: /api/tasks/todo/4
+2025-06-19 23:29:50,511 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:29:52,656 [WARNING] Not Found: /api/task/card-1
+2025-06-19 23:29:53,218 [WARNING] Not Found: /api/task/card-1
+2025-06-19 23:31:11,514 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:31:38,359 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:32:11,920 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:32:26,711 [WARNING] Not Found: /api/task/card-1
+2025-06-19 23:32:31,319 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:33:28,621 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:34:58,541 [WARNING] Not Found: /api/task/card-1
+2025-06-19 23:34:59,153 [WARNING] Not Found: /api/task/card-1
+2025-06-19 23:34:59,354 [WARNING] Not Found: /api/task/card-1
+2025-06-19 23:37:10,864 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\urls.py changed, reloading.
+2025-06-19 23:41:18,013 [WARNING] Not Found: /
+2025-06-19 23:41:46,759 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:41:54,152 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:42:04,875 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:43:23,276 [WARNING] Not Found: /api/tasks/todo/4
+2025-06-19 23:43:23,823 [WARNING] Not Found: /api/tasks/todo/4
+2025-06-19 23:43:28,389 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:43:44,499 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:43:56,436 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:46:49,119 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:47:09,381 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\login_view.py changed, reloading.
+2025-06-19 23:47:17,831 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:47:17,832 [DEBUG] 입력 이메일: rdh4879@naver.com
+2025-06-19 23:47:17,832 [DEBUG] 입력 비밀번호: 1234
+2025-06-19 23:47:17,837 [DEBUG] DB 조회된 유저: rdh4879@naver.com
+2025-06-19 23:47:18,478 [WARNING] 비밀번호 불일치
+2025-06-19 23:47:18,478 [DEBUG] 입력된 비밀번호: 1234
+2025-06-19 23:47:18,478 [DEBUG] DB 해시: $2b$12$AxBIJDNlFWJoMX6rWT8oROkn00tmMRWi.ChY.ZDysOhnYN.amvcqC
+2025-06-19 23:47:19,112 [DEBUG] check_password 결과: False
+2025-06-19 23:47:19,745 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:47:20,980 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:47:20,980 [DEBUG] 입력 이메일: rdh4879@naver.com
+2025-06-19 23:47:20,980 [DEBUG] 입력 비밀번호: 1234
+2025-06-19 23:47:20,984 [DEBUG] DB 조회된 유저: rdh4879@naver.com
+2025-06-19 23:47:21,613 [WARNING] 비밀번호 불일치
+2025-06-19 23:47:21,613 [DEBUG] 입력된 비밀번호: 1234
+2025-06-19 23:47:21,613 [DEBUG] DB 해시: $2b$12$AxBIJDNlFWJoMX6rWT8oROkn00tmMRWi.ChY.ZDysOhnYN.amvcqC
+2025-06-19 23:47:22,237 [DEBUG] check_password 결과: False
+2025-06-19 23:47:22,861 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:47:38,376 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:47:38,376 [DEBUG] 입력 이메일: rdh4879@naver.com
+2025-06-19 23:47:38,376 [DEBUG] 입력 비밀번호: 1234
+2025-06-19 23:47:38,378 [DEBUG] DB 조회된 유저: rdh4879@naver.com
+2025-06-19 23:47:39,003 [WARNING] 비밀번호 불일치
+2025-06-19 23:47:39,003 [DEBUG] 입력된 비밀번호: 1234
+2025-06-19 23:47:39,003 [DEBUG] DB 해시: $2b$12$AxBIJDNlFWJoMX6rWT8oROkn00tmMRWi.ChY.ZDysOhnYN.amvcqC
+2025-06-19 23:47:39,624 [DEBUG] check_password 결과: False
+2025-06-19 23:47:40,250 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:50:53,599 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:50:53,600 [DEBUG] 입력 이메일: rdh4879@naver.com
+2025-06-19 23:50:53,600 [DEBUG] 입력 비밀번호: 1234
+2025-06-19 23:50:53,603 [DEBUG] DB 조회된 유저: rdh4879@naver.com
+2025-06-19 23:50:54,881 [INFO] 로그인 성공: rdh4879@naver.com
+2025-06-19 23:50:54,990 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:50:55,525 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:51:17,204 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:51:17,277 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:51:30,032 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:51:30,032 [DEBUG] 입력 이메일: aa@test.com
+2025-06-19 23:51:30,032 [DEBUG] 입력 비밀번호: ㅁㅁ
+2025-06-19 23:51:30,034 [DEBUG] DB 조회된 유저: aa@test.com
+2025-06-19 23:51:30,658 [WARNING] 비밀번호 불일치
+2025-06-19 23:51:30,658 [DEBUG] 입력된 비밀번호: ㅁㅁ
+2025-06-19 23:51:30,658 [DEBUG] DB 해시: $2b$12$rTLdGmToM1D44kT5.NHooubbz0AEsfrcw80KQQGR3Vd0hXqV3IB8i
+2025-06-19 23:51:31,287 [DEBUG] check_password 결과: False
+2025-06-19 23:51:31,911 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:51:42,676 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:51:42,676 [DEBUG] 입력 이메일: aa@test.com
+2025-06-19 23:51:42,676 [DEBUG] 입력 비밀번호: ㅁㅁ
+2025-06-19 23:51:42,678 [DEBUG] DB 조회된 유저: aa@test.com
+2025-06-19 23:51:43,305 [WARNING] 비밀번호 불일치
+2025-06-19 23:51:43,305 [DEBUG] 입력된 비밀번호: ㅁㅁ
+2025-06-19 23:51:43,305 [DEBUG] DB 해시: $2b$12$rTLdGmToM1D44kT5.NHooubbz0AEsfrcw80KQQGR3Vd0hXqV3IB8i
+2025-06-19 23:51:43,935 [DEBUG] check_password 결과: False
+2025-06-19 23:51:44,568 [WARNING] Unauthorized: /api/login/
+2025-06-19 23:53:59,762 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:53:59,763 [DEBUG] 입력 이메일: aa@test.com
+2025-06-19 23:53:59,763 [DEBUG] 입력 비밀번호: 1234
+2025-06-19 23:53:59,766 [DEBUG] DB 조회된 유저: aa@test.com
+2025-06-19 23:53:59,969 [WARNING] LoginView 진입 확인됨
+2025-06-19 23:53:59,969 [DEBUG] 입력 이메일: aa@test.com
+2025-06-19 23:53:59,969 [DEBUG] 입력 비밀번호: 1234
+2025-06-19 23:53:59,972 [DEBUG] DB 조회된 유저: aa@test.com
+2025-06-19 23:54:01,098 [INFO] 로그인 성공: aa@test.com
+2025-06-19 23:54:01,200 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:54:01,295 [INFO] 로그인 성공: aa@test.com
+2025-06-19 23:54:01,662 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:54:06,690 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:54:06,831 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:54:45,235 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-19 23:54:45,238 [WARNING] Not Found: /api/tasks/todo/2
+2025-06-19 23:54:45,241 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:54:45,830 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-19 23:54:47,424 [WARNING] Not Found: /api/task/card-2
+2025-06-19 23:54:49,506 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-19 23:54:49,508 [WARNING] Not Found: /api/tasks/todo/2
+2025-06-19 23:54:49,511 [WARNING] Not Found: /api/getprojects
+2025-06-19 23:54:49,800 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-19 23:54:59,958 [WARNING] Not Found: /api/project
+2025-06-19 23:54:59,965 [WARNING] Not Found: /api/project
+2025-06-19 23:55:00,174 [WARNING] Not Found: /api/project
+2025-06-19 23:55:00,211 [WARNING] Not Found: /api/project
+2025-06-19 23:55:00,399 [WARNING] Not Found: /api/project
+2025-06-19 23:55:00,993 [WARNING] Not Found: /api/project
+2025-06-19 23:55:01,141 [WARNING] Not Found: /api/project
+2025-06-19 23:55:01,278 [WARNING] Not Found: /api/project
+2025-06-19 23:55:01,427 [WARNING] Not Found: /api/project
+2025-06-19 23:55:01,562 [WARNING] Not Found: /api/project
+2025-06-19 23:55:01,703 [WARNING] Not Found: /api/project
+2025-06-19 23:55:01,865 [WARNING] Not Found: /api/project
+2025-06-19 23:55:02,003 [WARNING] Not Found: /api/project
+2025-06-19 23:55:02,186 [WARNING] Not Found: /api/project
+2025-06-19 23:55:02,325 [WARNING] Not Found: /api/project

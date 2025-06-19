@@ -8,7 +8,7 @@ from utils.jwt_token import generate_jwt
 from datetime import datetime
 import os
 
-GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")  # .env에 등록 필요
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 
 class GoogleLoginView(APIView):
     def post(self, request):
@@ -21,20 +21,20 @@ class GoogleLoginView(APIView):
             email = idinfo["email"]
             name = idinfo.get("name", "이름 없음")
 
-            user = User.objects(email=email).first()
+            user = User.objects.filter(email=email).first()
 
             if not user:
-                user = User(
+                user = User.objects.create(
                     email=email,
                     name=name,
-                    authType="google"
-                ).save()
-            elif user.authType != "google":
+                    auth_provider="google"
+                )
+            elif user.auth_provider != "google":
                 return Response({
                     "error": "해당 이메일은 일반 로그인 방식으로 이미 등록되어 있습니다."
                 }, status=409)
 
-            user.lastLogin = datetime.utcnow()
+            user.last_login = datetime.utcnow()
             user.save()
 
             jwt_token = generate_jwt({"email": user.email})

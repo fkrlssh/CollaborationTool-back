@@ -70,7 +70,7 @@ class RegisterView(APIView):
         try:
             user = User.objects.create(
                 email=email,
-                password=hashed_pw,
+                password=password,
                 name=name,
                 created_at=timezone.now()
             )

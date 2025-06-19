@@ -6,6 +6,8 @@ from projects.models.project import Project
 from projects.models.projectmember import ProjectMember
 from users.models.user import User
 from datetime import datetime
+from rest_framework.permissions import IsAuthenticated
+
 
 class ProjectCreateView(APIView):
     def post(self, request):
@@ -20,7 +22,7 @@ class ProjectCreateView(APIView):
         project = Project.objects.create(
             name=name,
             description=description,
-            owner_email=user,
+            owner=user,
             created_at=datetime.now(),
             access=access
         )
@@ -32,3 +34,7 @@ class ProjectCreateView(APIView):
         )
 
         return Response({'message': '프로젝트가 생성되었습니다.', 'project_id': project.id}, status=status.HTTP_201_CREATED)
+
+
+class ProjectCreateView(APIView):
+    permission_classes = [IsAuthenticated]

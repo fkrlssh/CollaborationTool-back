@@ -2,9 +2,16 @@ from pathlib import Path
 from dotenv import load_dotenv
 from django.urls import path, include
 import os
-
+from datetime import timedelta
 
 load_dotenv()
+AUTH_USER_MODEL = 'users.User'
+
+SIMPLE_JWT = {
+    "USER_ID_FIELD": "email",  # id → email로 변경
+    "USER_ID_CLAIM": "user_id",
+    # ... (기타 옵션)
+}
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-if-not-set")
@@ -59,6 +66,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'users',
+    'notifications'
 ]
 
 
@@ -162,5 +170,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # )
  
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 CORS_ALLOW_ALL_ORIGINS = True
