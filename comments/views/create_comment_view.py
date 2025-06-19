@@ -6,6 +6,7 @@ from comments.models.comment import Comment
 from tasks.models.task import Task
 from tasks.models.tasklog import TaskLog
 from django.utils import timezone
+from notifications.services.create_notification import create_notification
 
 class CommentCreateView(APIView):
     def post(self, request, project_id, task_number):
@@ -42,5 +43,12 @@ class CommentCreateView(APIView):
             message=f"{user.name}님이 댓글을 작성했습니다.",
             timestamp=timezone.now()
         )
+
+        if task.assignee and task.assignee != user:
+            create_notification(
+                user=task.assignee,
+             type='comment_posted',
+             message=f"{user.name}님이 댓글을 남겼습니다."
+            )
 
         return Response({'message': '댓글이 작성되었습니다.', 'comment_number': next_comment_number}, status=status.HTTP_201_CREATED)
