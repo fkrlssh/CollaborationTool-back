@@ -5,6 +5,7 @@ from rest_framework import status
 from projects.models.project import Project
 from projects.models.projectmember import ProjectMember
 from users.models.user import User
+from notifications.services.create_notification import create_notification
 
 class InviteMemberView(APIView):
     def post(self, request, project_id):
@@ -29,4 +30,11 @@ class InviteMemberView(APIView):
             return Response({'error': '이미 팀원입니다.'}, status=status.HTTP_400_BAD_REQUEST)
 
         ProjectMember.objects.create(project=project, user=user_to_invite, role=role)
+
+        create_notification(
+            user=user_to_invite,
+            type='invited',
+            message=f"'{project.name}' 프로젝트에 초대되었습니다."
+        )
+        
         return Response({'message': f'{email} 사용자가 팀원으로 추가되었습니다.'}, status=status.HTTP_200_OK)
