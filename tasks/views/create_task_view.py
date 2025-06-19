@@ -9,6 +9,7 @@ from tasks.models.tasklog import TaskLog
 from tasks.models.tasktag import TaskTag
 from files.services.upload_service import save_uploaded_file
 from users.models.user import User
+from notifications.services.create_notification import create_notification
 
 class TaskCreateView(APIView):
     def post(self, request, project_id):
@@ -68,5 +69,12 @@ class TaskCreateView(APIView):
         if 'files' in request.FILES:
             for file in request.FILES.getlist('files'):
                 save_uploaded_file(file, project_id, next_task_number, user)
+
+        if assignee:
+            create_notification(
+                user=assignee,
+                type='task_assigned',
+                message=f"'{task.title}' 업무가 당신에게 배정되었습니다."
+            )
 
         return Response({'message': '업무가 생성되었습니다.', 'task_number': task.task_number}, status=status.HTTP_201_CREATED)
