@@ -9,6 +9,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from projects.views.create_project_view import ProjectCreateApiView
 
 
 
@@ -22,7 +23,8 @@ urlpatterns = [
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path("api/notifications/", include("notifications.urls"))
+    path("api/notifications/", include("notifications.urls")),
+    path("api/project/", ProjectCreateApiView.as_view(), name="project-api-create"),
 ]
 
 SIMPLE_JWT = {

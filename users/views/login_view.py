@@ -17,11 +17,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+# ... (생략된 import 및 로깅 설정 동일)
+
 class LoginView(APIView):
-    permission_classes = [AllowAny]  # 
+    permission_classes = [AllowAny]
 
     def post(self, request):
-        logger.warning("LoginView 진입 확인됨")  # 진입 로그
+        logger.warning("LoginView 진입 확인됨")
 
         email = request.data.get("email")
         password = request.data.get("password")
@@ -42,21 +44,18 @@ class LoginView(APIView):
 
         if not user:
             logger.warning(f"사용자 없음: {email}")
-        elif not user.check_password(password):
+            return Response({"error": "이메일 또는 비밀번호가 잘못되었습니다."}, status=401)
+
+        if not user.check_password(password):
             logger.warning("비밀번호 불일치")
             logger.debug(f"입력된 비밀번호: {password}")
             logger.debug(f"DB 해시: {user.password}")
-            logger.debug(f"check_password 결과: {user.check_password(password)}")
-
-        if not user or not user.check_password(password):
             return Response({"error": "이메일 또는 비밀번호가 잘못되었습니다."}, status=401)
 
         user.last_login = timezone.now()
         user.save()
 
-        token = generate_jwt({
-            "email": user.email
-        })
+        token = generate_jwt({ "email": user.email })
 
         logger.info(f"로그인 성공: {email}")
 

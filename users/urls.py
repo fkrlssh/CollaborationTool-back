@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, include
+
 from users.views.register_view import RegisterView
 from users.views.login_view import LoginView
 from users.views.me_view import MeView
@@ -20,5 +21,5 @@ urlpatterns = [
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # 로그인 (JWT 발급)
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # 리프레시 토큰
-    path("api/notifications/", include("notifications.urls"))
+
     ]  
