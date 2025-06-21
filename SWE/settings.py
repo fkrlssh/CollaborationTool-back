@@ -66,7 +66,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'users',
-    'notifications'
+    'notifications',
+    'tasks.apps.TasksConfig',
 ]
 
 

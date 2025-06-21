@@ -1,12 +1,12 @@
 # tasks/models/tasktag.py
 from django.db import models
 from .task import Task
+from projects.models.project import Project
 
 class TaskTag(models.Model):
-    task = models.ForeignKey(Task, on_delete=models.CASCADE, db_column='task_number')
-    project = models.ForeignKey(Task, on_delete=models.CASCADE, db_column='project_id')
+    task = models.ForeignKey(Task, on_delete=models.CASCADE, db_column='task_number', related_name='tags')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, db_column='project_id', related_name='task_tags')
     tag = models.CharField(max_length=50)
-
     class Meta:
         db_table = 'task_tags'
         unique_together = ('project', 'task', 'tag')

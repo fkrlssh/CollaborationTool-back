@@ -613,3 +613,27 @@ django.db.utils.IntegrityError: (1062, "Duplicate entry '3-rdh4879@naver.com' fo
 2025-06-20 15:23:48,753 [WARNING] Not Found: /api/getprojects
 2025-06-20 15:24:03,324 [WARNING] Not Found: /api/getprojects
 2025-06-20 15:24:31,964 [WARNING] Not Found: /api/getprojects
+2025-06-20 22:31:16,061 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\SWE\settings.py changed, reloading.
+2025-06-20 22:31:28,922 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\SWE\settings.py changed, reloading.
+2025-06-20 22:32:03,883 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\apps.py changed, reloading.
+2025-06-20 22:37:02,060 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasklog.py changed, reloading.
+2025-06-20 22:40:53,782 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasklog.py changed, reloading.
+2025-06-20 22:41:06,767 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasktag.py changed, reloading.
+2025-06-20 22:45:05,562 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasktag.py changed, reloading.
+2025-06-20 22:45:08,020 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasktag.py changed, reloading.
+2025-06-20 22:45:17,824 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasktag.py changed, reloading.
+2025-06-20 22:45:30,790 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasklog.py changed, reloading.
+2025-06-20 22:45:38,533 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasklog.py changed, reloading.
+2025-06-20 22:45:51,576 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasklog.py changed, reloading.
+2025-06-20 22:49:32,850 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasktag.py changed, reloading.
+2025-06-20 22:50:33,310 [WARNING] Not Found: /api/getprojects
+2025-06-20 22:50:33,828 [WARNING] Not Found: /api/getprojects
+2025-06-20 22:50:45,339 [WARNING] Unauthorized: /api/notifications/
+2025-06-20 22:50:47,082 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-20 22:50:47,087 [WARNING] Not Found: /api/tasks/todo/2
+2025-06-20 22:50:47,090 [WARNING] Not Found: /api/getprojects
+2025-06-20 22:50:47,636 [WARNING] Not Found: /api/tasks/todo/undefined
+2025-06-20 22:50:53,233 [WARNING] Not Found: /api/getprojects
+2025-06-20 22:50:53,367 [WARNING] Not Found: /api/getprojects
+2025-06-21 02:32:35,021 [WARNING] Not Found: /
+2025-06-21 12:08:38,205 [WARNING] Not Found: /
