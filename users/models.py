@@ -12,6 +12,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser):
     email    = models.EmailField(primary_key=True, max_length=254)
     name     = models.CharField(max_length=100)
+    created_at = models.DateTimeField(default=timezone.now)
 
 
     objects = UserManager()

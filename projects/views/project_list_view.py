@@ -1,30 +1,29 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from projects.models.project import Project
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from projects.models.projectmember import ProjectMember
-from tasks.models.task import Task
 
 class ProjectListView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         user = request.user
 
-        # 내가 속한 프로젝트들
-        memberships = ProjectMember.objects.filter(user=user).select_related('project')
-        data = []
+        memberships = ProjectMember.objects.select_related('project').filter(user=user)
 
-        for membership in memberships:
-            project = membership.project
+        result = [
+            {
+                "id": m.project.id,
+                "name": m.project.name,
+                "description": m.project.description,
+                "role": m.role,
+                "access": m.project.access,
+                "owner": m.project.owner.email,
+                "created_at": m.project.created_at,
+            }
+            for m in memberships
+        ]
 
-            # 각 프로젝트의 업무 목록(title만)
-            tasks = Task.objects.filter(project_id=project.id).values('task_number', 'title')
-
-            data.append({
-                "id": project.id,
-                "name": project.name,
-                "description": project.description,
-                "my_role": membership.role,
-                "tasks": list(tasks)
-            })
-
-        return Response(data, status=status.HTTP_200_OK)
+        return Response(result)

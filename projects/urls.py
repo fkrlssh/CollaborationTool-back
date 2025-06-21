@@ -5,6 +5,7 @@ from projects.views.delete_project_view import ProjectDeleteView
 from projects.views.project_list_view import ProjectListView
 from projects.views.project_detail_view import ProjectDetailView
 
+
 urlpatterns = [
     path('create/', ProjectCreateView.as_view(), name='project-create'),
     path('<int:project_id>/invite/', InviteMemberView.as_view(), name='project-invite'),
@@ -12,4 +13,5 @@ urlpatterns = [
     path('', ProjectCreateView.as_view(), name='create-project'),
     path('', ProjectListView.as_view(), name='project-list'),
     path('<int:project_id>/', ProjectDetailView.as_view(), name='project-detail'),
+    path('getprojects/', ProjectListView.as_view()),
 ]

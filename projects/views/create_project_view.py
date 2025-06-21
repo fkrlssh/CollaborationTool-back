@@ -85,13 +85,17 @@ class ProjectCreateApiView(APIView):
 
                 try:
                     member_user = User.objects.get(email=email)
+                    role_raw = m.get("role", "member")
+                    role = role_raw if role_raw in ["admin", "member"] else "member"
+
                     ProjectMember.objects.create(
                         project=project,
                         user=member_user,
-                        role=m.get("role", "member")
+                        role=role
                     )
                 except User.DoesNotExist:
                     continue
+
 
         return Response({
             "message": "프로젝트가 생성되었습니다.",

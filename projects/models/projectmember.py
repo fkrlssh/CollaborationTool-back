@@ -1,9 +1,9 @@
-# projects/models/projectmember.py
 from django.db import models
 from users.models.user import User
 from .project import Project
 
 class ProjectMember(models.Model):
+    id = models.AutoField(primary_key=True) 
     ROLE_CHOICES = [
         ('admin', 'Admin'),
         ('member', 'Member'),

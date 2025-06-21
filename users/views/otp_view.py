@@ -31,7 +31,7 @@ def send_otp(request):
         send_mail(
             subject='회원가입 인증 코드',
             message=f'인증 번호는 {otp} 입니다. 5분 내에 입력해주세요.',
-            from_email='no-reply@yourdomain.com',  # settings.py에서 설정한 발신 주소
+            from_email='thrhdthrhd02@gmail.com',  # settings.py에서 설정한 발신 주소
             recipient_list=[email],
             fail_silently=False,
         )
