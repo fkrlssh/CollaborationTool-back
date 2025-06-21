@@ -10,6 +10,6 @@ urlpatterns = [
     path('<int:project_id>/invite/', InviteMemberView.as_view(), name='project-invite'),
     path('<int:project_id>/delete/', ProjectDeleteView.as_view(), name='project-delete'),
     path('', ProjectCreateView.as_view(), name='create-project'),
-    path('', ProjectListView.as_view(), name='project-list'),
+    path('getprojects/', ProjectListView.as_view(), name='project-list'),
     path('<int:project_id>/', ProjectDetailView.as_view(), name='project-detail'),
 ]
