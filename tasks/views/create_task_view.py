@@ -1,4 +1,3 @@
-# tasks/views/create_task_view.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -10,6 +9,8 @@ from tasks.models.tasktag import TaskTag
 from files.services.upload_service import save_uploaded_file
 from users.models.user import User
 from notifications.services.create_notification import create_notification
+import json
+
 
 class TaskCreateView(APIView):
     def post(self, request, project_id):
@@ -22,17 +23,29 @@ class TaskCreateView(APIView):
 
         title = request.data.get('title')
         description = request.data.get('description', '')
-        assignee_email = request.data.get('assignee_email')
+        assignee_email = request.data.get('assignee_email', '').strip()
         due_date = request.data.get('due_date')
-        tags = request.data.get('tags', [])
+        tags_raw = request.data.get('tags', '[]')
+
+        print("[DEBUG] User 모델:", User)
+        print("[DEBUG] assignee_email:", assignee_email)
+
+        try:
+            tags = json.loads(tags_raw) if isinstance(tags_raw, str) else tags_raw
+        except json.JSONDecodeError:
+            tags = []
 
         if not title or not due_date:
             return Response({'error': '제목과 마감일은 필수입니다.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        try:
-            assignee = User.objects.get(email=assignee_email) if assignee_email else None
-        except User.DoesNotExist:
-            return Response({'error': '담당자 이메일이 유효하지 않습니다.'}, status=status.HTTP_400_BAD_REQUEST)
+        assignee_qs = User.objects.filter(email__iexact=assignee_email)
+        print("[DEBUG] assignee_qs.exists():", assignee_qs.exists())
+
+        assignee = assignee_qs.first() if assignee_qs.exists() else None
+
+        if assignee_email and not assignee:
+            print("[DEBUG] 이메일 매칭된 유저 없음")
+            return Response({'error': '담당자 이메일이 유효하지 않습니다.'}, status=400)
 
         # 업무 번호 정하기
         last_task = Task.objects.filter(project_id=project_id).order_by('-task_number').first()
@@ -51,25 +64,26 @@ class TaskCreateView(APIView):
             updated_at=timezone.now()
         )
 
-        # ✅ 로그 저장
+        # 로그
         TaskLog.objects.create(
             project=project,
-            task=task,
+            task_number=next_task_number,
             user=user,
             type="create",
             message=f"업무 '{title}' 생성됨",
             timestamp=timezone.now()
         )
 
-        # ✅ 태그 저장
+        # 태그
         for tag in tags:
-            TaskTag.objects.create(project=project, task=task, tag=tag)
+            TaskTag.objects.create(project=project, task_number=next_task_number, tag=tag)
 
-        # ✅ 파일 업로드 저장
+        # 파일
         if 'files' in request.FILES:
             for file in request.FILES.getlist('files'):
                 save_uploaded_file(file, project_id, next_task_number, user)
 
+        # 알림
         if assignee:
             create_notification(
                 user=assignee,

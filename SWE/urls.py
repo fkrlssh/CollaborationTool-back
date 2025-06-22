@@ -15,5 +15,8 @@ urlpatterns = [
     path("api/notifications/", include("notifications.urls")),
     path("api/project/", ProjectCreateApiView.as_view(), name="project-api-create"),
     path("api/getprojects/", ProjectListView.as_view()),
+    path("api/projects/", include("projects.urls")),
+    path("api/", include("tasks.urls")),
+
 
 ]

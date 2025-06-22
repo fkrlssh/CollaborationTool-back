@@ -1,14 +1,12 @@
-# tasks/models/tasklog.py
 from django.db import models
-from .task import Task
 from users.models.user import User
 from projects.models.project import Project
 
 class TaskLog(models.Model):
     id = models.AutoField(primary_key=True)
 
-    task = models.ForeignKey(Task, on_delete=models.CASCADE, db_column='task_number', related_name='logs')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, db_column='project_id', related_name='task_logs')
+    task_number = models.IntegerField()  
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, db_column='user_email')
 
@@ -18,6 +16,7 @@ class TaskLog(models.Model):
 
     class Meta:
         db_table = 'task_logs'
+        # optional: unique_together = (('project', 'task_number', 'timestamp'),)
 
     def __str__(self):
         return f"{self.timestamp} | {self.type}"

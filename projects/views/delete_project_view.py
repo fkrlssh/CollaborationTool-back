@@ -4,8 +4,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from projects.models.project import Project
 from projects.models.projectmember import ProjectMember
+from utils.auth import jwt_required
 
 class ProjectDeleteView(APIView):
+    @jwt_required
     def delete(self, request, project_id):
         user = request.user
         try:

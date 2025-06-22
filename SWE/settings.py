@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'users',
     'notifications',
     'tasks.apps.TasksConfig',
+    'files',
+    'comments',
 ]
 
 

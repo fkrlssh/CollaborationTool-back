@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from users.views.register_view import RegisterView, EmailCheckView
 from users.views.login_view import LoginView
 from users.views.me_view import MeView
@@ -20,4 +20,6 @@ urlpatterns = [
     path("email/", send_otp), 
     path("token/", TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path("token/refresh/", TokenRefreshView.as_view(), name='token_refresh'),
+    path("api/projects/", include("projects.urls")),
+    path("api/", include("tasks.urls")),
 ]
