@@ -1,37 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views
 from django.http import JsonResponse
 
-from datetime import timedelta
 from users.views.custom_token_view import CustomTokenObtainPairView
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
 from projects.views.create_project_view import ProjectCreateApiView
-from projects.views.project_list_view import ProjectListView 
-
-
+from projects.views.project_list_view import ProjectListView
+from users.views.otp_view import send_otp
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/test/", views.test_api),  
-    path("api/", include("users.urls")),
-    path('projects/', include('projects.urls')),
-    path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('health/', lambda request: JsonResponse({'status': 'OK'})),
-
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path("api/test/", lambda request: JsonResponse({'status': 'OK'})),
+    path("api/", include("users.urls")),  
+    path("projects/", include("projects.urls")),
     path("api/notifications/", include("notifications.urls")),
     path("api/project/", ProjectCreateApiView.as_view(), name="project-api-create"),
-    path('api/getprojects/', ProjectListView.as_view()),
-    path('api/', include('projects.urls')),
-]
+    path("api/getprojects/", ProjectListView.as_view()),
 
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
-    # 기타 옵션...
-}
+]

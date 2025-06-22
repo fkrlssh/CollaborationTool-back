@@ -3,14 +3,19 @@
 import random
 from django.utils import timezone
 from django.core.mail import send_mail
-from rest_framework.decorators import api_view
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from users.models import EmailOTP  # models/__init__.py에 등록돼 있어야 함
+from rest_framework import status
+
+
 
 def generate_otp():
     return f"{random.randint(100000, 999999)}"
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def send_otp(request):
     email = request.data.get('email')
     if not email:
@@ -31,7 +36,7 @@ def send_otp(request):
         send_mail(
             subject='회원가입 인증 코드',
             message=f'인증 번호는 {otp} 입니다. 5분 내에 입력해주세요.',
-            from_email='thrhdthrhd02@gmail.com',  # settings.py에서 설정한 발신 주소
+            from_email=settings.EMAIL_HOST_USER,  # settings.py에서 설정한 발신 주소
             recipient_list=[email],
             fail_silently=False,
         )

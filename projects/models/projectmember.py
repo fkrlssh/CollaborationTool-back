@@ -3,14 +3,13 @@ from users.models.user import User
 from .project import Project
 
 class ProjectMember(models.Model):
-    id = models.AutoField(primary_key=True) 
     ROLE_CHOICES = [
         ('admin', 'Admin'),
         ('member', 'Member'),
         ('guest', 'Guest'),
     ]
 
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, db_column='project_id')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, db_column='project_id', primary_key=True)  # ✅ 이게 PK
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_email')
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
 

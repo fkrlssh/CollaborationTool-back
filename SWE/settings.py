@@ -10,7 +10,11 @@ AUTH_USER_MODEL = 'users.User'
 SIMPLE_JWT = {
     "USER_ID_FIELD": "email",  # id → email로 변경
     "USER_ID_CLAIM": "user_id",
-    # ... (기타 옵션)
+
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=7),        # access token: 7일
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=30),      # refresh token: 30일
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
 }
 
 BASE_DIR = Path(__file__).resolve().parent.parent
