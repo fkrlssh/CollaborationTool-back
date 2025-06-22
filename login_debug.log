@@ -3453,3 +3453,75 @@ django.db.utils.IntegrityError: (1452, 'Cannot add or update a child row: a fore
 2025-06-22 20:28:30,801 [WARNING] Not Found: /api/projects/undefined
 2025-06-22 20:29:25,378 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\models\tasktag.py changed, reloading.
 2025-06-22 20:30:14,299 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\views\create_task_view.py changed, reloading.
+2025-06-22 20:32:14,759 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:32:15,186 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:32:33,426 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:32:33,502 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:32:33,518 [WARNING] Not Found: /api/projects/undefined
+2025-06-22 20:32:33,959 [WARNING] Not Found: /api/projects/undefined
+2025-06-22 20:32:58,843 [WARNING] Not Found: /api/tasks/todo/27
+2025-06-22 20:33:03,128 [WARNING] Unauthorized: /projects/27/delete/
+2025-06-22 20:33:14,037 [WARNING] Not Found: /api/task
+2025-06-22 20:33:34,259 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:33:34,684 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:34:02,480 [WARNING] Not Found: /api/task
+2025-06-22 20:36:31,668 [WARNING] Not Found: /api/20/task
+2025-06-22 20:41:00,871 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:41:01,422 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:41:18,872 [ERROR] Internal Server Error: /api/17/create
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to projects-usb-reviewer-right.trycloudflare.com/api/17/create/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-06-22 20:45:44,297 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:45:44,757 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:46:00,967 [ERROR] Internal Server Error: /api/17/create
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to projects-usb-reviewer-right.trycloudflare.com/api/17/create/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-06-22 20:54:12,949 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:54:13,360 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:59:55,986 [WARNING] Unauthorized: /api/me/
+2025-06-22 20:59:56,414 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:00:53,252 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:02:16,127 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:06:17,338 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:06:17,860 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:10:57,435 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:10:57,919 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:14:31,465 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:14:31,951 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:14:42,375 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:14:42,452 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:15:31,502 [WARNING] Unauthorized: /api/me/
+2025-06-22 21:15:32,081 [WARNING] Unauthorized: /api/me/
+2025-06-22 22:06:31,360 [WARNING] Unauthorized: /projects/26/delete/
+2025-06-22 22:06:36,174 [WARNING] Not Found: /api/26/getmembers
+2025-06-22 22:06:43,180 [WARNING] Not Found: /api/26/addmember
+2025-06-22 22:07:31,546 [WARNING] Not Found: /api/task/card-1
+2025-06-22 22:07:32,103 [WARNING] Not Found: /api/task/card-1
+2025-06-22 22:07:32,174 [WARNING] Not Found: /api/task/card-1
+2025-06-22 22:07:32,260 [WARNING] Not Found: /api/task/card-1
+2025-06-22 22:12:58,821 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\users\views\otp_view.py changed, reloading.
+2025-06-22 22:14:51,951 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\tasks\urls.py changed, reloading.
+2025-06-22 22:21:00,923 [WARNING] Unauthorized: /api/me/
+2025-06-22 22:21:01,402 [WARNING] Unauthorized: /api/me/

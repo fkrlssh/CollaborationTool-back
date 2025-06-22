@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from users.models import EmailOTP  # models/__init__.py에 등록돼 있어야 함
 from rest_framework import status
+from django.conf import settings
 
 
 
