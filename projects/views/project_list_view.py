@@ -13,17 +13,30 @@ class ProjectListView(APIView):
 
         memberships = ProjectMember.objects.select_related('project').filter(user=user)
 
-        result = [
-            {
-                "id": m.project.id,
-                "name": m.project.name,
-                "description": m.project.description,
+        result = []
+
+        for m in memberships:
+            project = m.project
+
+            # 해당 프로젝트에 속한 모든 멤버 이름과 역할 가져오기
+            member_list = ProjectMember.objects.select_related('user').filter(project=project)
+            members_data = [
+                {
+                    "name": member.user.name,
+                    "role": member.role
+                }
+                for member in member_list
+            ]
+
+            result.append({
+                "id": project.id,
+                "name": project.name,
+                "description": project.description,
                 "role": m.role,
-                "access": m.project.access,
-                "owner": m.project.owner.email,
-                "created_at": m.project.created_at,
-            }
-            for m in memberships
-        ]
+                "access": project.access,
+                "owner": project.owner.email,
+                "created_at": project.created_at,
+                "members": members_data
+            })
 
         return Response(result)
