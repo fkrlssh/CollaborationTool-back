@@ -3,9 +3,9 @@ from django.db import models
 from users.models.user import User
 
 class File(models.Model):
+    file_number = models.IntegerField(primary_key=True)
     project_id = models.IntegerField()
     task_number = models.IntegerField()
-    file_number = models.IntegerField()
 
     uploader = models.ForeignKey(User, on_delete=models.CASCADE, db_column='uploader_email')
     file_name = models.CharField(max_length=255)

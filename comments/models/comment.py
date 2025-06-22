@@ -4,9 +4,10 @@ from tasks.models.task import Task
 from users.models.user import User
 
 class Comment(models.Model):
+    id=None
     project_id = models.IntegerField()
     task_number = models.IntegerField()
-    comment_number = models.IntegerField()
+    comment_number = models.IntegerField(primary_key=True)
     
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_email')
     content = models.TextField()
