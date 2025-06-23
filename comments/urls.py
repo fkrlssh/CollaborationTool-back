@@ -10,4 +10,5 @@ urlpatterns = [
     path('projects/<int:project_id>/tasks/<int:task_number>/comments/<int:comment_number>/update/', CommentUpdateView.as_view(), name='comment-update'),
     path('projects/<int:project_id>/tasks/<int:task_number>/comments/<int:comment_number>/delete/', CommentDeleteView.as_view(), name='comment-delete'),
     path('projects/<int:project_id>/tasks/<int:task_number>/comments/', CommentListView.as_view(), name='comment-list'),
+    path('projects/<int:project_id>/tasks/<int:task_number>/comments/<int:comment_number>/', CommentDeleteView.as_view(), name='comment-delete'),
 ]
