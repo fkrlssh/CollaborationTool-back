@@ -10591,3 +10591,340 @@ django.db.utils.IntegrityError: (1062, "Duplicate entry '32-2-3' for key 'task_t
 2025-06-23 21:14:35,321 [WARNING] Not Found: /api/projects/34/tasks/1/comments/
 2025-06-23 21:14:36,230 [WARNING] Not Found: /api/projects/32/tasks/2/comments/
 2025-06-23 21:14:52,462 [WARNING] Not Found: /api/projects/32/tasks/4/comments/
+2025-06-23 21:15:57,905 [WARNING] Not Found: /api/projects/34/tasks/1/comments/
+2025-06-23 21:19:06,678 [WARNING] Not Found: /api/projects/34/tasks/1/detail/
+2025-06-23 21:20:02,588 [WARNING] Not Found: /api/projects/undefined
+2025-06-23 21:20:08,897 [WARNING] Not Found: /api/projects/34/tasks/2/comments/
+2025-06-23 21:20:19,222 [WARNING] Not Found: /api/projects/26/tasks/4/comments/
+2025-06-23 21:20:23,310 [WARNING] Not Found: /api/projects/34/tasks/2/comments/
+2025-06-23 21:21:13,616 [WARNING] Bad Request: /projects/26/invite/
+2025-06-23 21:22:30,492 [ERROR] Internal Server Error: /api/projects/34/tasks/2/update/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\tasks\views\update_task_view.py", line 89, in put
+    TaskLog.objects.create(
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: TaskLog() got unexpected keyword arguments: 'project', 'task_number'
+2025-06-23 21:22:32,972 [WARNING] Not Found: /api/projects/22/tasks/1/comments/
+2025-06-23 21:22:37,812 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/create/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\create_comment_view.py", line 43, in post
+    TaskLog.objects.create(
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: TaskLog() got unexpected keyword arguments: 'project', 'task_number'
+2025-06-23 21:22:38,241 [WARNING] Not Found: /api/projects/34/tasks/2/comments/
+2025-06-23 21:22:54,161 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/create/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\create_comment_view.py", line 43, in post
+    TaskLog.objects.create(
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: TaskLog() got unexpected keyword arguments: 'project', 'task_number'
+2025-06-23 21:23:05,972 [WARNING] Not Found: /api/projects/34/tasks/2/comments/
+2025-06-23 21:23:10,836 [ERROR] Internal Server Error: /api/projects/34/tasks/2/update/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\tasks\views\update_task_view.py", line 89, in put
+    TaskLog.objects.create(
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: TaskLog() got unexpected keyword arguments: 'project', 'task_number'
+2025-06-23 21:23:15,502 [WARNING] Not Found: /api/projects/34/tasks/2/comments/
+2025-06-23 21:24:47,400 [WARNING] Not Found: /api/projects/22/tasks/1/comments/
+2025-06-23 21:25:03,073 [WARNING] Unauthorized: /projects/34/delete/
+2025-06-23 21:30:34,622 [WARNING] Not Found: /api/projects/26/tasks/4/comments/
+2025-06-23 21:30:36,407 [ERROR] Internal Server Error: /api/projects/26/tasks/4/update/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\tasks\views\update_task_view.py", line 89, in put
+    TaskLog.objects.create(
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: TaskLog() got unexpected keyword arguments: 'project', 'task_number'
+2025-06-23 21:30:42,528 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\comments\urls.py changed, reloading.
+2025-06-23 21:30:46,136 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\comments\urls.py changed, reloading.
+2025-06-23 21:31:43,397 [WARNING] Not Found: /projects/22/tasks/1/comments/
+2025-06-23 21:33:08,837 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\SWE\urls.py changed, reloading.
+2025-06-23 21:33:53,017 [WARNING] Not Found: /projects/22/tasks/1/comments/
+2025-06-23 21:35:31,373 [WARNING] Not Found: /projects/22/tasks/1/comments/
+2025-06-23 21:35:40,745 [WARNING] Not Found: /projects/22/tasks/1/comments/
+2025-06-23 21:36:19,109 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\comment_list_view.py", line 18, in get
+    'user_email': c.user_email,
+                  ^^^^^^^^^^^^
+AttributeError: 'Comment' object has no attribute 'user_email'
+2025-06-23 21:36:19,566 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\comment_list_view.py", line 18, in get
+    'user_email': c.user_email,
+                  ^^^^^^^^^^^^
+AttributeError: 'Comment' object has no attribute 'user_email'
+2025-06-23 21:37:25,995 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\comment_list_view.py", line 18, in get
+    'user_email': c.user_email,
+                  ^^^^^^^^^^^^
+AttributeError: 'Comment' object has no attribute 'user_email'
+2025-06-23 21:38:13,088 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\comment_list_view.py", line 18, in get
+    'user_email': c.user_email,
+                  ^^^^^^^^^^^^
+AttributeError: 'Comment' object has no attribute 'user_email'
+2025-06-23 21:38:59,091 [ERROR] Internal Server Error: /api/projects/22/tasks/1/comments/
+Traceback (most recent call last):
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asd\Desktop\소공서버\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asd\Desktop\CollaborationTool-back\comments\views\comment_list_view.py", line 18, in get
+    'user_email': c.user_email,
+                  ^^^^^^^^^^^^
+AttributeError: 'Comment' object has no attribute 'user_email'
+2025-06-23 21:40:17,383 [INFO] C:\Users\asd\Desktop\CollaborationTool-back\comments\views\comment_list_view.py changed, reloading.
