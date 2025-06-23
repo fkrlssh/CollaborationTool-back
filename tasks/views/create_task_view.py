@@ -66,8 +66,7 @@ class TaskCreateView(APIView):
 
         # 로그
         TaskLog.objects.create(
-            project=project,
-            task_number=next_task_number,
+            task=task,  # ← ForeignKey(Task)
             user=user,
             type="create",
             message=f"업무 '{title}' 생성됨",
