@@ -4,10 +4,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from tasks.models.task import Task
 from tasks.models.tasklog import TaskLog
+from tasks.models.tasktag import TaskTag
 from users.models.user import User
 from files.services.upload_service import save_uploaded_file
 from files.services.delete_service import delete_file
 from django.utils import timezone
+import ast
 
 class TaskUpdateView(APIView):
     def put(self, request, project_id, task_number):
@@ -24,7 +26,16 @@ class TaskUpdateView(APIView):
         status_value = request.data.get('status')
         due_date = request.data.get('due_date')
         assignee_email = request.data.get('assignee_email')
+        tags = request.data.get('tags', [])  # ✅ 태그 리스트
 
+        # 문자열이면 리스트로 파싱 시도
+        if isinstance(tags, str):
+            try:
+                tags = ast.literal_eval(tags)
+            except Exception:
+                tags = []
+
+        # 담당자 설정
         if assignee_email:
             try:
                 assignee = User.objects.get(email=assignee_email)
@@ -34,6 +45,7 @@ class TaskUpdateView(APIView):
             except User.DoesNotExist:
                 return Response({'error': '담당자 이메일이 유효하지 않습니다.'}, status=status.HTTP_400_BAD_REQUEST)
 
+        # 필드 변경 체크
         if title and task.title != title:
             log_messages.append(f"제목 변경: {task.title} → {title}")
             task.title = title
@@ -48,20 +60,42 @@ class TaskUpdateView(APIView):
             task.due_date = due_date
 
         task.updated_at = timezone.now()
-        task.save()
+
+        # DB 업데이트
+        Task.objects.filter(project_id=project_id, task_number=task_number).update(
+            title=task.title,
+            description=task.description,
+            status=task.status,
+            due_date=task.due_date,
+            assignee=task.assignee,
+            updated_at=task.updated_at
+        )
+
+        # ✅ 태그 수정: 기존 삭제 후 재생성 (공백 제거 + 중복 제거)
+        TaskTag.objects.filter(project_id=project_id, task_number=task_number).delete()
+
+        clean_tags = set()
+        for tag in tags:
+            if isinstance(tag, str):
+                cleaned = tag.strip()
+                if cleaned:
+                    clean_tags.add(cleaned)
+
+        for tag in clean_tags:
+            TaskTag.objects.create(project_id=project_id, task_number=task_number, tag=tag)
 
         # ✅ 로그 저장
         for msg in log_messages:
             TaskLog.objects.create(
                 project=task.project,
-                task=task,
+                task_number=task.task_number,
                 user=user,
                 type="update",
                 message=msg,
                 timestamp=timezone.now()
             )
 
-        # ✅ 파일 삭제 (delete_files = [1, 2, 3])
+        # ✅ 파일 삭제
         delete_ids = request.data.get('delete_files', [])
         for file_number in delete_ids:
             delete_file(project_id, task_number, file_number, user)

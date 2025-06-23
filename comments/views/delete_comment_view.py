@@ -3,8 +3,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from comments.models.comment import Comment
+from utils.auth import jwt_required
 
 class CommentDeleteView(APIView):
+    @jwt_required
     def delete(self, request, project_id, task_number, comment_number):
         user = request.user
         try:

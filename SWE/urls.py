@@ -17,6 +17,6 @@ urlpatterns = [
     path("api/getprojects/", ProjectListView.as_view()),
     path("api/projects/", include("projects.urls")),
     path("api/", include("tasks.urls")),
-
+    path('api/', include('comments.urls')),
 
 ]
